@@ -23,9 +23,12 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: bash scripts/refresh.sh NosirbekXakimov dtwinuz/bitg
       - name: Commit when changed
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           git diff --quiet && exit 0
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -am "chore: refresh live section"
-          git push
+          sha="$(gh api "repos/$GITHUB_REPOSITORY/contents/README.md" --jq .sha)"
+          gh api -X PUT "repos/$GITHUB_REPOSITORY/contents/README.md" \
+            -f message="chore: refresh live section" \
+            -f content="$(base64 -w0 README.md)" \
+            -f sha="$sha" --silent
