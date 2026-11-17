@@ -20,7 +20,7 @@ Updated daily by a GitHub Action in this repository.
 <!-- live:start -->
 | Repository | Latest release | Published |
 |---|---|---|
-| [dtwinuz/bitg](https://github.com/dtwinuz/bitg) | [v0.4.0](https://github.com/dtwinuz/bitg/releases/tag/v0.4.0) | 2026-11-13 |
+| [dtwinuz/bitg](https://github.com/dtwinuz/bitg) | [v0.5.0](https://github.com/dtwinuz/bitg/releases/tag/v0.5.0) | 2026-11-16 |
 
 Public merged pull requests: **7** · Pull requests reviewed: **0**
 <!-- live:end -->
